@@ -8,7 +8,8 @@ module.exports=(query, request)=>{
                 msg: 'OK',
                 details: {
                     status: true,
-                    version: 'version'
+                    nodever: 'version',
+                    apiver: 'version'
                 }
             },
             cookie: []
@@ -25,7 +26,8 @@ module.exports=(query, request)=>{
         };
 
         try {
-            successResponse.body.details.version=JSON.stringify(process.versions)
+            successResponse.body.details.nodever="Node.js "+process.versions.node;
+            successResponse.body.details.apiver="NeteaseCloudMusicApi v4.10.1";
             return successResponse;
 
         } catch (error) {
