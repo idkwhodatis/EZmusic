@@ -5,6 +5,6 @@ Based on [Node.js-Mobile](https://github.com/nodejs-mobile/nodejs-mobile) and [N
 **Dependencies**
 - Android Studio
 - CMake and NDK in Android Studio SDK Tools
-- Android Build of, preferably version v16.17.0
+- Android Build of Node.js, preferably version v16.17.0
   - Download compressed file, unpack it and put it into mobile/src/main/cpp/libnode
-- Netease Cloud Music Api and its node_modules is included in this repo, since some modification on it and on some of its node_modules
+- Netease Cloud Music Api and its node_modules are included in this repo, since there are some modification on it and on some of its node_modules
