@@ -12,11 +12,9 @@ class Style{
         val colorScheme=MaterialTheme.colorScheme.copy(
             primary=Color(0xFF222222),
             secondary=Color(0xFF444444),
+            tertiary=Color(0xFF999999),
+            onPrimary=Color(0xFF999999),
             background=Color(0xFF111111)
-        )
-        val systemUiController=rememberSystemUiController()
-        systemUiController.setStatusBarColor(
-                color=colorScheme.background
         )
         MaterialTheme(
             colorScheme=colorScheme,
@@ -24,11 +22,16 @@ class Style{
             shapes=MaterialTheme.shapes,
             content=content
         )
+        val systemUiController=rememberSystemUiController()
+        systemUiController.setStatusBarColor(
+                color=colorScheme.background
+        )
     }
 
     companion object StyleStatic {
         fun sb():String{
             return "sb"
         }
+
     }
 }
