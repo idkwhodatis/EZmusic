@@ -14,6 +14,7 @@ class Style{
             secondary=Color(0xFF444444),
             tertiary=Color(0xFF999999),
             onPrimary=Color(0xFF999999),
+            onSecondary=Color(0xFF999999),
             background=Color(0xFF111111)
         )
         MaterialTheme(

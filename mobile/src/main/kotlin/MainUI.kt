@@ -32,7 +32,7 @@ import androidx.navigation.compose.rememberNavController
 class MainUI(val activity:MainActivity){
     lateinit var navController:NavHostController
 
-    companion object TextValue{
+    companion object Res{
         var loadMsg by mutableStateOf("Initializing")
         var test by mutableStateOf("test")
 
@@ -74,7 +74,7 @@ class MainUI(val activity:MainActivity){
                     color=MaterialTheme.colorScheme.secondary
                 )
                 Spacer(modifier=Modifier.height(16.dp))
-                Text(TextValue.loadMsg,color=MaterialTheme.colorScheme.tertiary)
+                Text(loadMsg,color=MaterialTheme.colorScheme.tertiary)
             }
         }
 
@@ -99,7 +99,7 @@ class MainUI(val activity:MainActivity){
             ){
             }
             Column(horizontalAlignment=Alignment.CenterHorizontally){
-                Text(TextValue.test,color=MaterialTheme.colorScheme.secondary)
+                Text(test,color=MaterialTheme.colorScheme.secondary)
                 Button(onClick={activity.test()}){
                     Text("Fetch")
                 }

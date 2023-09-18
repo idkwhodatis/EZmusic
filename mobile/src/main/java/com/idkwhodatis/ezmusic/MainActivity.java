@@ -41,13 +41,13 @@ public class MainActivity extends AppCompatActivity{
                 new Response.Listener<String>(){
                     @Override
                     public void onResponse(String response){
-                        MainUI.TextValue.setTest(response);
+                        MainUI.Res.setTest(response);
                     }
                 },
                 new Response.ErrorListener(){
                     @Override
                     public void onErrorResponse(VolleyError error){
-                        MainUI.TextValue.setTest(error.toString());
+                        MainUI.Res.setTest(error.toString());
                     }
                 }
             )

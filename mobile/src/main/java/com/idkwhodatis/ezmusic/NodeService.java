@@ -48,7 +48,7 @@ public class NodeService extends Service{
             new Thread(new Runnable(){
                 @Override
                 public void run(){
-                    MainUI.TextValue.setLoadMsg("installing Node.js API");
+                    MainUI.Res.setLoadMsg("installing Node.js API");
                     //Recursively delete any existing nodejs-project.
                     File nodeDirReference=new File(nodeDir);
                     if(nodeDirReference.exists()){
@@ -70,7 +70,7 @@ public class NodeService extends Service{
         nodeHandler.post(new Runnable(){
             @Override
             public void run(){
-                MainUI.TextValue.setLoadMsg("Starting Node.js API");
+                MainUI.Res.setLoadMsg("Starting Node.js API");
                 new Thread(new Runnable(){
                     @Override
                     public void run(){
