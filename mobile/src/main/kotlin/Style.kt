@@ -25,7 +25,7 @@ class Style{
         )
         val systemUiController=rememberSystemUiController()
         systemUiController.setStatusBarColor(
-                color=colorScheme.background
+            color=colorScheme.background
         )
     }
 
