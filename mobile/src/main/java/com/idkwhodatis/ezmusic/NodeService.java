@@ -108,7 +108,7 @@ public class NodeService extends Service{
         createNotificationChannel();
         Notification notification=new NotificationCompat.Builder(this,"NodeChannel")
                 .setContentTitle("Foreground Service")
-                .setContentText("This is a foreground service example.")
+                .setContentText("Node.js API Running")
                 .setSmallIcon(R.drawable.ic_cloud)
                 .build();
         startForeground(1,notification);
@@ -134,7 +134,7 @@ public class NodeService extends Service{
     private void createNotificationChannel(){
         NotificationChannel serviceChannel=new NotificationChannel(
                 "NodeChannel",
-                "Foreground Service Channel",
+                "Node.js API Started",
                 NotificationManager.IMPORTANCE_LOW
         );
         NotificationManager manager=getSystemService(NotificationManager.class);

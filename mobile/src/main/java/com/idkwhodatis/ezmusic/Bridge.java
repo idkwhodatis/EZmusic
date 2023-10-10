@@ -22,7 +22,16 @@ public class Bridge{
     }
 
     public String url(String endpoint){
+        if(endpoint.contains("?")){
+            endpoint+="&realip=116.25.146.177";
+        }else{
+            endpoint+="?realip=116.25.146.177";
+        }
         return "http://localhost:3000"+endpoint;
+    }
+
+    public String url(String endpoint,int addTimeStamp){
+        return url(endpoint)+"&timestamp="+System.currentTimeMillis();
     }
 
 }

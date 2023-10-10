@@ -36,6 +36,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.Divider
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateListOf
@@ -45,6 +46,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.graphics.painter.BitmapPainter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -310,11 +313,63 @@ class testui {
         }
     }
 
+
+    var QRCode by mutableStateOf(ImageBitmap(1000,1000));
+
+    @OptIn(ExperimentalMaterial3Api::class)
+    @Composable
+    fun LoginScreen(){
+        Scaffold(
+            topBar={TopAppBar(
+                colors=TopAppBarDefaults.topAppBarColors(
+                    containerColor=MaterialTheme.colorScheme.background
+                ),
+                title={},
+                navigationIcon={
+                    IconButton(onClick={}){
+                        Icon(
+                            painter=painterResource(id=R.drawable.ic_back),
+                            contentDescription="",
+                            tint=MaterialTheme.colorScheme.secondary,
+                            modifier=Modifier.size(30.dp)
+                        )
+                    }
+                },
+                actions={
+                    IconButton(onClick={}){
+                        Icon(
+                            painter=painterResource(id=R.drawable.ic_refresh),
+                            contentDescription="",
+                            tint=MaterialTheme.colorScheme.secondary,
+                            modifier=Modifier.size(30.dp)
+                        )
+                    }
+                }
+            )}
+        ){innerPadding->
+            Box(
+                modifier=Modifier
+                    .padding(innerPadding)
+                    .fillMaxSize(),
+                contentAlignment=Alignment.Center
+            ){
+                Image(
+                    painter=BitmapPainter(QRCode),
+                    contentDescription=null,
+                    modifier=Modifier
+                        .offset(y=(-50).dp)
+                        .size(300.dp,300.dp),
+                    contentScale=ContentScale.FillBounds
+                )
+            }
+        }
+    }
+
     @Preview(showBackground = true,name="test")
     @Composable
     fun TestPreview(){
         Style().EZTheme {
-            MainScreen()
+            LoginScreen()
         }
     }
 }
